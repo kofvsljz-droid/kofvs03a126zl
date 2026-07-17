@@ -71,3 +71,36 @@ proxies:
     password: 333c6d59-89c6-4e09-899d-77c23ec36890
     transport: TCP
     udp: true
+
+proxy-groups:
+
+  - name: 🚀 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇭🇰 香港01
+      - 🇭🇰 香港02
+      - 🇭🇰 香港03
+      - 🇯🇵 日本01
+      - 🇸🇬 新加坡01
+      - 🇺🇸 美国01
+      - 🇺🇸 美国02
+      - 🇺🇸 美国03
+
+  - name: 🌐 节点选择
+    type: select
+    proxies:
+      - 🚀 自动选择
+      - 🇭🇰 香港01
+      - 🇭🇰 香港02
+      - 🇭🇰 香港03
+      - 🇯🇵 日本01
+      - 🇸🇬 新加坡01
+      - 🇺🇸 美国01
+      - 🇺🇸 美国02
+      - 🇺🇸 美国03
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🌐 节点选择
