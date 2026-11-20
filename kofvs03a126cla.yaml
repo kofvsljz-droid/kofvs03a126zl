@@ -24,6 +24,16 @@ proxies:
     udp: true
     traffic-pattern: "CgYIngEQ9wM="
 
+  - name: "直连-香港03"
+    type: mieru
+    server: boxhk.cdnazuremicrosoft.com
+    port: 65535
+    username: "333c6d59-89c6-4e09-899d-77c23ec36890"
+    password: "333c6d59-89c6-4e09-899d-77c23ec36890"
+    transport: TCP
+    udp: true
+    traffic-pattern: "CgYIkQEQ9QM="
+
   - name: "直连-香港04-5x"
     type: mieru
     server: hk.box0.cdnazuremicrosoft.com
@@ -612,11 +622,12 @@ proxies:
 proxy-groups:
   - name: "🚀 自动选择"
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: https://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - "直连-香港01"
       - "直连-香港02"
+      - "直连-香港03"
       - "直连-香港04-5x"
       - "直连-日本01-5x"
       - "直连-新加坡01-5x"
@@ -666,6 +677,7 @@ proxy-groups:
       - "🚀 自动选择"
       - "直连-香港01"
       - "直连-香港02"
+      - "直连-香港03"
       - "直连-香港04-5x"
       - "直连-日本01-5x"
       - "直连-新加坡01-5x"
